@@ -31,7 +31,7 @@ const queries = {
     isDekstopL: 'screen and (min-width: 1441px)'
 }
 
-export const App = (props) =>  (
+export const Route = (props) =>  (
   <MatchQueriesProvider queries={queries}>
     <MyApp />
   </MatchQueriesProvider>
@@ -44,7 +44,7 @@ export const App = (props) =>  (
 ```javascript
 import { MatchQueriesConsumer } from 'react-matchqueries';
 
-export const MyComponent = () => (
+export const MyApp = () => (
   <MatchQueriesConsumer>
     {({ isDekstopS, isDekstop, isDekstopL, isTablet, isMobile }) => (
       <>
@@ -64,16 +64,18 @@ You can pass in media features from your server, all supported values can be fou
 
 **Usage (matches mobile screen during SSR):**
 ```javascript
-const App = (props) => {
+import { MatchQueriesProvider } from 'react-matchqueries';
+
+const Route = () => {
   const values = {
     width: 300,
     type: 'screen',
   };
 
   return (
-    <MatchQueriesConsumer values={values}>
+    <MatchQueriesProvider values={values}>
       <MyApp />
-    </MatchQueriesConsumer>
+    </MatchQueriesProvider>
   );
 };
 ```

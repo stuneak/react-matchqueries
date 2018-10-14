@@ -1,6 +1,6 @@
 {
   "name": "react-matchqueries",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Library to control the design of your application using media queries",
   "main": "dist/index.js",
   "scripts": {
